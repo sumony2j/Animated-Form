@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Fill-up</title> 
+    <link href="home.css" rel="stylesheet" type="text/css">
+    <script>
+     function check(){
+                      var x=document.myform.elements.length ;
+                      var p=document.myform;
+                      for(i=0;i<x;i++){
+                        var y=p.elements[i].value;
+                        if(p.elements[i].className == "req" && y == 0)
+                            {
+                                alert("Please fill all the required fields");
+                                  return false;
+                            }
+                                     }
+                     }
+    </script>
+  </head>
+    <body>
+      <form method="post" name="myform">
+        <dl>
+        <div>
+           <dt><h1>Personal Information</h1></dt>
+           <dd>
+              <ul>
+                <li>*First Name:<input type="text" id="name" name="name" class="req"></li>
+                <li>Occupation:<input type="text" id="occupation" name="occupation"></li>
+                <li>*Email-id:<input type="email" id="email" name="email" class="req"></li>
+                <li>*Contact Number:<input type="tel" id="contact" name="contact" class="req"></li>
+              </ul>
+           </dd>
+        </div>
+        <div>
+           <dt><h1>Educational Qualification</h1></dt>
+           <dd class="hide">
+              <ul>
+                <li>*School:<input type="text" id="school" name="school" class="req"></li>
+                <li>*College:<input type="text" id="college" name="college" class="req"></li>
+                <li>*Degree:<input type="text" id="degree" name="degree" class="req"></li>
+                <li>*Year Of passing:<input type="number" max="2020" min="2010" id="pass" name="pass" class="req"></li>
+              </ul>
+           </dd>
+        </div>    
+        <div>
+           <dt><h1>Other Information</h1></dt>
+           <dd class="hide">
+              <ul>
+                <li>*Country:<input type="text" id="country" name="country" class="req"></li>
+                <li>City:<input type="text" id="city" name="city"></li>
+                <li>*Address:<input type="text" id="address" name="adress" class="req"></li>
+                <li>Father's Name:<input type="text" id="fname" name="fname"></li>
+                <li>Mother's Name:<input type="tel" id="mname" name="mname"></li>
+              </ul>
+           </dd>
+        </div>
+        </dl>
+        <button onclick="check();">Submit</button>
+      </form>
+    </body>
+    <script src="jquery-3.5.0.min.js"></script>
+    <script src="home.js"></script>
+</html>
